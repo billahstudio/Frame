@@ -192,12 +192,24 @@ export const FrameEditor: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-white/[0.05] py-4 mt-12 bg-[#050608] text-center text-xs text-zinc-400">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© ASUS ExpertBook Ultra Frame Studio. All rights reserved.</p>
-          <p className="text-[11px] text-zinc-400">
-            1254 × 1254 Native Canvas • Zero Cloud Uploads • 100% Client-Side
-          </p>
+      <footer className="w-full border-t border-white/[0.05] py-6 mt-12 bg-[#050608] text-center text-xs text-zinc-400">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center space-y-2">
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 text-zinc-500 text-[11px]">
+            <p>© ASUS ExpertBook Ultra Frame Studio. All rights reserved.</p>
+            <p>1254 × 1254 Native Canvas • Zero Cloud Uploads • 100% Client-Side</p>
+          </div>
+
+          <div className="pt-2 text-xs text-zinc-500">
+            Created by{' '}
+            <a
+              href="https://www.basharbillah.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-300 font-medium hover:text-white hover:underline underline-offset-4 transition-colors duration-200 cursor-pointer"
+            >
+              Billah Studio
+            </a>
+          </div>
         </div>
       </footer>
 
