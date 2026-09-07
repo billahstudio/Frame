@@ -133,7 +133,7 @@ export const FrameEditor: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#07080a] text-zinc-100 selection:bg-cyan-500/30 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-black text-zinc-100 selection:bg-cyan-500/30 selection:text-white">
       <UploadInput
         onFileSelected={handleFileSelected}
         onError={(msg) => addToast('error', msg)}
@@ -144,15 +144,26 @@ export const FrameEditor: React.FC = () => {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 flex flex-col justify-center">
         {/* Top Subtitle / Product Brief */}
         <div className="text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-cyan-400 font-semibold mb-1 block">
-            ASUS ExpertBook Ultra
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-cyan-400 font-semibold mb-1.5 block">
+            ASUS EXPERTBOOK ULTRA
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
             Official Event Frame Generator
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+          <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-xl mx-auto">
             Seamlessly place and align your portrait behind the ASUS ExpertBook Ultra
-            frame artwork. All compositing happens privately on your device.
+            frame artwork. All compositing happens privately on your device.{' '}
+            <span className="text-zinc-200 font-medium whitespace-nowrap">
+              Develop By{' '}
+              <a
+                href="https://www.basharbillah.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-cyan-400 hover:underline underline-offset-2 transition-colors cursor-pointer"
+              >
+                Billah Studio
+              </a>
+            </span>
           </p>
         </div>
 
@@ -192,24 +203,22 @@ export const FrameEditor: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-white/[0.05] py-6 mt-12 bg-[#050608] text-center text-xs text-zinc-400">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center space-y-2">
-          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 text-zinc-500 text-[11px]">
-            <p>© ASUS ExpertBook Ultra Frame Studio. All rights reserved.</p>
-            <p>1254 × 1254 Native Canvas • Zero Cloud Uploads • 100% Client-Side</p>
-          </div>
-
-          <div className="pt-2 text-xs text-zinc-500">
-            Created by{' '}
+      <footer className="w-full border-t border-white/[0.06] py-5 mt-16 bg-black text-xs text-zinc-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p>
+            © All rights reserved. Created by{' '}
             <a
               href="https://www.basharbillah.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-300 font-medium hover:text-white hover:underline underline-offset-4 transition-colors duration-200 cursor-pointer"
+              className="text-zinc-300 font-medium hover:text-white hover:underline underline-offset-4 transition-colors cursor-pointer"
             >
               Billah Studio
             </a>
-          </div>
+          </p>
+          <p className="text-[11px] text-zinc-500 font-mono">
+            1254 × 1254 Native Canvas • Zero Cloud Uploads • 100% Client-Side
+          </p>
         </div>
       </footer>
 
