@@ -7,7 +7,7 @@ import { Header } from './Header';
 import { ToastContainer } from './Toast';
 import { UploadInput } from './UploadZone';
 import { exportCompositeImage } from '@/lib/canvasRenderer';
-import { DEFAULT_TRANSFORM, FRAME_ASSET_PATH, TRANSFORM_LIMITS } from '@/lib/constants';
+import { DEFAULT_TRANSFORM, FRAME_ASSET_PATH, FRAME_GEOMETRY, TRANSFORM_LIMITS } from '@/lib/constants';
 import { loadImageFromUrl, loadUserImage } from '@/lib/imageUtils';
 import { OutputFormat, ToastMessage, TransformState, UserImageInfo } from '@/types';
 
@@ -123,7 +123,7 @@ export const FrameEditor: React.FC = () => {
         format: outputFormat,
         jpegQuality: jpegQuality / 100,
       });
-      addToast('success', `Export complete! Downloaded 1254×1254 ${outputFormat.toUpperCase()}.`);
+      addToast('success', `Export complete! Downloaded ${FRAME_GEOMETRY.canvasWidth}×${FRAME_GEOMETRY.canvasHeight} ${outputFormat.toUpperCase()}.`);
     } catch (err: unknown) {
       console.error('Export error:', err);
       addToast('error', 'Something went wrong during export. Please try again.');
@@ -217,7 +217,7 @@ export const FrameEditor: React.FC = () => {
             </a>
           </p>
           <p className="text-[11px] text-zinc-500 font-mono">
-            1254 × 1254 Native Canvas • Zero Cloud Uploads • 100% Client-Side
+            {FRAME_GEOMETRY.canvasWidth} × {FRAME_GEOMETRY.canvasHeight} Native Canvas • Zero Cloud Uploads • 100% Client-Side
           </p>
         </div>
       </footer>

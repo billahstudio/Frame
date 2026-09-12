@@ -11,7 +11,7 @@ export interface RenderCanvasOptions {
 
 /**
  * High-fidelity rendering engine for both live preview and native export.
- * Renders into a 1254 x 1254 context.
+ * Renders into native canvas geometry (FRAME_GEOMETRY).
  */
 export function renderCompositedFrame({
   canvas,
@@ -25,7 +25,7 @@ export function renderCompositedFrame({
   const width = FRAME_GEOMETRY.canvasWidth;
   const height = FRAME_GEOMETRY.canvasHeight;
 
-  // Always ensure canvas internal size is exactly 1254 x 1254
+  // Always ensure canvas internal size matches native frame dimensions
   if (canvas.width !== width || canvas.height !== height) {
     canvas.width = width;
     canvas.height = height;
@@ -85,14 +85,14 @@ export function renderCompositedFrame({
   }
 
   // 2. LAYER TOP: ASUS Frame Overlay
-  // Frame.png is rendered strictly at (0, 0, 1254, 1254)
+  // Frame.png is rendered strictly at (0, 0, width, height)
   if (frameImage) {
     ctx.drawImage(frameImage, 0, 0, width, height);
   }
 }
 
 /**
- * Creates an offscreen 1254 x 1254 canvas, renders the final composition,
+ * Creates an offscreen native canvas, renders the final composition,
  * and triggers a native high-quality download.
  */
 export async function exportCompositeImage({

@@ -234,7 +234,7 @@ export const CanvasPreview: React.FC<CanvasPreviewProps> = ({
 
       {/* Resolution & Ratio Subtitle */}
       <div className="flex items-center justify-between w-full px-2 mt-3 text-[11px] text-zinc-400">
-        <span>Output Canvas: 1254 × 1254 px (1:1)</span>
+        <span>Output Canvas: {FRAME_GEOMETRY.canvasWidth} × {FRAME_GEOMETRY.canvasHeight} px (1:1)</span>
         <span className="text-zinc-400">ASUS Pixel-Perfect Overlay</span>
       </div>
     </div>

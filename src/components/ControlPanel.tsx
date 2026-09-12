@@ -10,7 +10,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { SliderRow } from './Sliders';
-import { TRANSFORM_LIMITS } from '@/lib/constants';
+import { FRAME_GEOMETRY, TRANSFORM_LIMITS } from '@/lib/constants';
 import { formatBytes } from '@/lib/imageUtils';
 import { OutputFormat, TransformState, UserImageInfo } from '@/types';
 
@@ -196,7 +196,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
           <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400">
             03 / Export Format
           </span>
-          <span className="text-[11px] font-mono text-zinc-500">1254 × 1254 px</span>
+          <span className="text-[11px] font-mono text-zinc-500">{FRAME_GEOMETRY.canvasWidth} × {FRAME_GEOMETRY.canvasHeight} px</span>
         </div>
 
         {/* Format Selector Radio Cards */}
@@ -285,7 +285,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
           {isExporting ? (
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 border-2 border-zinc-950 border-t-transparent rounded-full animate-spin" />
-              <span>Rendering 1254px Export...</span>
+              <span>Rendering {FRAME_GEOMETRY.canvasWidth}px Export...</span>
             </div>
           ) : (
             <div className="flex items-center space-x-2">

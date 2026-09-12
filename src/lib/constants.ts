@@ -2,19 +2,19 @@ import { FrameGeometry, TransformState } from '@/types';
 
 /**
  * Exact geometric constants determined from pixel-level programmatic inspection of Frame.png:
- * - Canvas dimensions: 1254 x 1254
+ * - Canvas dimensions: 1024 x 1024
  * - Central circular transparent window:
- *   - Center: (618.5, 568.5)
- *   - Radius: 507px (diameter: 1014px)
- *   - Transparent bounds: x in [112, 1125], y in [62, 855] (with bottom covered by laptop artwork)
+ *   - Center: (506, 445)
+ *   - Radius: 351px (diameter: 702px)
+ *   - Transparent bounds: x in [152, 860], y in [99, 786] (with bottom-right covered by laptop artwork)
  */
 export const FRAME_GEOMETRY: FrameGeometry = {
-  canvasWidth: 1254,
-  canvasHeight: 1254,
-  centerX: 618.5,
-  centerY: 568.5,
-  radius: 507,
-  diameter: 1014,
+  canvasWidth: 1024,
+  canvasHeight: 1024,
+  centerX: 506,
+  centerY: 445,
+  radius: 351,
+  diameter: 702,
 };
 
 export const DEFAULT_TRANSFORM: TransformState = {
